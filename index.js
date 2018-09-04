@@ -73,3 +73,35 @@ var app7 = new Vue({
     ]
   }
 })
+
+// The Vue Instance
+// It was inspired by the View-ViewModel-Model
+// A Vue application consists of a root Vue instance created with new Vue, optionally organized into a tree of nested, reusable components
+// all Vue components are also Vue instances, and so accept the same options object 
+
+var data = { a: 1 } //  data object
+
+var vm = new Vue({
+  data: data
+})
+
+// properties in data are only reactive if they existed when the instance was created
+// Object.freeze() prevents existing properties from being changed, which also means the reactivity system can’t track changes.
+
+var obj = {
+    foo: 'bar'
+}
+
+Object.freeze(obj)
+
+new Vue({
+    el: '#app-9',
+    data: obj
+})
+
+// Vue has a number of instance properties and methods, prefixed by $
+var data = { a: 1 }
+var vm1 = new Vue({
+  el: '#example',
+  data: data
+})
